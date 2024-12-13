@@ -1,0 +1,10 @@
+<div th:fragment="admin-menu" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="d-flex justify-content-center align-items-center">
+        <a th:href="@{/admin/index}"  class="sub-menu-link">Dashboard</a>
+        <a th:href="@{/admin/employee-list}" class="sub-menu-link">Employee</a>
+        <a th:href="@{/admin/notification}" class="sub-menu-link position-relative">
+            Notifications
+            <span  th:if="${notificationCount > 0}" th:text="${notificationCount}" class="badge badge-pill badge-danger position-absolute" style="top: -9px; right: -20px;background-color:#ef0000;border-radius:50%;">3</span>
+        </a>
+    </div>
+</div>

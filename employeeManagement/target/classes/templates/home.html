@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="">
+    <div th:replace="fragments/header :: header"></div>
+    <body>
+        <div th:replace="fragments/navbar :: navbar"></div>
+        <div class="body-content">
+            <div class="row">
+                <div th:each="activeEmployee : ${activeEmployee}" class="col-lg-3 col-md-3 col-sm-3 mb-4">
+                    <div class="card">
+                        <!-- Profile Image -->
+                        <img th:src="@{/images/emp-profile/profile.jpg}" class="card-img-top rounded-circle mx-auto mt-4" alt="Profile Picture">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" th:text="${activeEmployee.firstName+ '  ' +activeEmployee.lastName}">John Doe</h5>
+                            <p class="card-text" th:text="${activeEmployee.designation}">Web Developer | Designer | Blogger</p>
+                            <a th:href="@{/home/emp-details}" class="btn btn-sm btn-primary"><i class="fa fa-eye me-1"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:replace="fragments/footer :: footer"></div>
+    </body>
+</html>
+
+
+
+

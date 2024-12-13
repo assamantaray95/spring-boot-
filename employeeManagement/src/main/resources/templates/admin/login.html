@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:replace="fragments/header :: header"></div>
+    <body>
+        <div th:replace="fragments/navbar :: navbar"></div>
+        <div class="body-content bg-light">
+            <!-- Centered Login Form Section -->
+            <div class="container d-flex justify-content-center align-items-center min-vh">
+                <div class="col-md-4">
+                    <!-- Card for the Login Form -->
+                    <div class="card shadow-lg">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h4>Admin Login</h4>
+                        </div>
+                        <div class="card-body">
+
+                            <!-- Error Message (Visible when there is an error) -->
+                            <div th:if="${param.error}" class="alert alert-danger">
+                                Invalid username and password.
+                            </div>
+
+                            <!-- Logout Message (Visible when user logs out) -->
+                            <div th:if="${param.logout}" class="alert alert-success">
+                                You have been logged out.
+                            </div>
+
+                            <!-- Login Form -->
+                            <form th:action="@{/admin/login}" method="post">
+                                <!-- Username Input -->
+                                <div class="form-group mb-3">
+                                    <label for="username">User Name</label>
+                                    <input type="text" class="form-control" id="username" name="username" required />
+                                </div>
+
+                                <!-- Password Input -->
+                                <div class="form-group mb-3">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required />
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-primary btn-block mt-2 "><i class="fa fa-sign-in me-1"></i> Sign In</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:replace="fragments/footer :: footer"></div>
+    </body>
+</html>

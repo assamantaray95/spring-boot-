@@ -1,0 +1,71 @@
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ensures the body takes full viewport height */
+
+}
+
+/* Main content styles */
+main {
+    flex: 1; /* Allows the main content area to expand and take available space */
+}
+
+/* Footer styles */
+footer {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text */
+    text-align: center; /* Center align text */
+    padding: 10px 0; /* Padding for spacing */
+    position: relative; /* Ensure footer stays at bottom when needed */
+    width: 100%; /* Footer spans across the entire width */
+    bottom: 0;
+    margin-top:auto;
+}
+.bg-light {
+  background-color:#333 !important;
+}
+/* Footer Text Styling */
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+.body-content {
+   margin-left: 5rem;
+   margin-right: 5rem;
+   margin-top:5rem;
+   margin-bottom:5rem;
+   max-width:100%;
+}
+.card-img-top {
+   width: 35% !important;
+   height:84px !important;
+}
+.card-header{
+   padding:.5rem 1rem .2rem;
+}
+.min-vh {
+  min-height: 60vh;
+}
+.sub-menu{
+    margin-left:4.9rem;
+    margin-right:4.9rem;
+    margin-top:1rem;
+    margin-bottom:-4rem;
+}
+
+.sub-menu-link{
+    text-decoration:none;
+    margin-right:1rem;
+    margin-left:1rem;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="">
+    <div th:replace="fragments/header :: header"></div>
+    <body>
+        <div th:replace="fragments/navbar :: navbar"></div>
+        <div class="sub-menu">
+            <div th:replace="fragments/admin-sub-menu :: admin-menu"></div>
+        </div>
+        <div class="body-content">
+            <div class="mt-4">
+                <div class="container mt-4">
+                    <h2>All Notifications</h2>
+
+                    <!-- Check if notifications exist -->
+                    <div th:if="${contactDetails == ''}">
+                        <div class="alert alert-warning" role="alert">
+                            No notifications available.
+                        </div>
+                    </div>
+
+                    <!-- Loop through notifications and display them in cards -->
+                    <div th:if="${contactDetails != ''}" th:each="notification : ${contactDetails}" class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${notification.name}"></h5>
+                            <p class="card-text" th:text="${notification.subject}"></p>
+                            <p class="card-text"><small class="text-muted" th:text="${#dates.format(notification.createDate, 'dd/MM/YYYY')}"></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:replace="fragments/footer :: footer"></div>
+    </body>
+</html>

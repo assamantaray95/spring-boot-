@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="">
+<div th:replace="fragments/header :: header"></div>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+<div class="sub-menu">
+    <div th:replace="fragments/admin-sub-menu :: admin-menu"></div>
+</div>
+<div class="body-content">
+    <div class="row">
+        <div class="col-md-8 mx-auto rounded border p-4">
+           edit
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

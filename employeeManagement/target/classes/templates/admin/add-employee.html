@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml" lang="">
+    <div th:replace="fragments/header :: header"></div>
+    <body>
+        <div th:replace="fragments/navbar :: navbar"></div>
+        <div class="sub-menu">
+            <div th:replace="fragments/admin-sub-menu :: admin-menu"></div>
+        </div>
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-8 mx-auto rounded border p-4">
+                    <form  method="post" th:object="${empData}">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" class="form-control" th:field="${empData.firstName}">
+                                <p th:if="${#fields.hasErrors('firstName')}" class="text-danger" th:errors="${empData.firstName}"></p>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" th:field="${empData.lastName}">
+                                <p th:if="${#fields.hasErrors('lastName')}" class="text-danger" th:errors="${empData.lastName}"></p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="designation">Designation</label>
+                                <input type="text" id="designation" class="form-control" th:field="${empData.designation}">
+                                <p th:if="${#fields.hasErrors('designation')}" class="text-danger" th:errors="${empData.designation}"></p>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email">Email</label>
+                                <input type="text" id="email" class="form-control" th:field="${empData.email}">
+                                <p th:if="${#fields.hasErrors('email')}" class="text-danger" th:errors="${empData.email}"></p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                               <label for="image">Image</label>
+                                <input type="file" id="image" class="form-control" th:field="${empData.image}">
+                                <p th:if="${#fields.hasErrors('image')}" class="text-danger" th:errors="${empData.image}"></p>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone">Phone</label>
+                                <input type="text" id="phone" class="form-control" th:field="${empData.phone}">
+                                <p th:if="${#fields.hasErrors('phone')}" class="text-danger" th:errors="${empData.phone}"></p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" class="form-control" th:field="${empData.address}">
+                                <p th:if="${#fields.hasErrors('address')}" class="text-danger" th:errors="${empData.address}"></p>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="status">Status</label>
+                                <select id="status" class="form-control" th:field="${empData.status}">
+                                    <option value="">Select</option>
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+                                </select>
+                                <p th:if="${#fields.hasErrors('status')}" class="text-danger" th:errors="${empData.status}"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex gap-2 mt-3">
+                                <button type="submit" class="btn btn-md btn-primary"><i class="fa fa-arrow-circle-right me-1"></i> Submit</button>
+                                <a th:href="@{/admin/employee-list}" class="btn btn-md btn-danger"><i class="fa fa-times-circle me-1"></i>  Cancel</a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div th:replace="fragments/footer :: footer"></div>
+    </body>
+</html>
